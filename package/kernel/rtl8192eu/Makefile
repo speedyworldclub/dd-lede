@@ -28,7 +28,7 @@ define KernelPackage/8192cu
   DEPENDS:=+kmod-cfg80211 +kmod-usb-core +@DRIVER_11N_SUPPORT +@DRIVER_11AC_SUPPORT @!LINUX_3_18 @!LINUX_4_9
   FILES:=\
 	$(PKG_BUILD_DIR)/rtl8192eu.ko
-  AUTOLOAD:=$(call AutoProbe,rtl8192cu)
+  AUTOLOAD:=$(call AutoProbe,rtl8192eu)
   PROVIDES:=kmod-rtl8192eu
 endef
 
