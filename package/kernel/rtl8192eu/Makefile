@@ -15,16 +15,16 @@ PKG_SOURCE_PROTO:=git
 
 #PKG_MAINTAINER:=Ben Greear <greearb@candelatech.com>
 PKG_BUILD_PARALLEL:=1
-#PKG_EXTMOD_SUBDIRS:=rtl8192eu
+#PKG_EXTMOD_SUBDIRS:=rtl8812au-ct
 
 STAMP_CONFIGURED_DEPENDS := $(STAGING_DIR)/usr/include/mac80211-backport/backport/autoconf.h
 
 include $(INCLUDE_DIR)/kernel.mk
 include $(INCLUDE_DIR)/package.mk
 
-define KernelPackage/8192eu
+define KernelPackage/rtl8192eu-ct
   SUBMENU:=Wireless Drivers
-  TITLE:=Driver for Realtek 8192eu
+  TITLE:=Driver for Realtek 8192 EU
   DEPENDS:=+kmod-cfg80211 +kmod-usb-core +@DRIVER_11N_SUPPORT +@DRIVER_11AC_SUPPORT @!LINUX_3_18 @!LINUX_4_9
   FILES:=\
 	$(PKG_BUILD_DIR)/rtl8192eu.ko
@@ -52,3 +52,4 @@ define Build/Compile
 endef
 
 $(eval $(call KernelPackage,rtl8192eu))
+© 2019 GitHub, Inc.
