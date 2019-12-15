@@ -1,30 +1,19 @@
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=rtl8812au-ct
+PKG_NAME:=rtl8812/21au-ct
 PKG_RELEASE=1
 
 PKG_LICENSE:=GPLv2
 PKG_LICENSE_FILES:=
 
 
+PKG_SOURCE_URL:=https://github.com/greearb/rtl8812AU_8821AU_linux.git
+PKG_MIRROR_HASH:=42b32c56cf31bdf3c9cd4e304c9aac761b623c8737d8c57518117acdc5a84cfe
+PKG_SOURCE_PROTO:=git
+PKG_SOURCE_DATE:=2018-11-16
+PKG_SOURCE_VERSION:=661268fd174d4a74834c82d7d3987b0a560e6c57
 
-
-PKG_SOURCE_URL:=https://https://github.com/speedyworldclub/rtl8812au-ARM-4.19.zip
-PKG_HASH :=4411e5b0984d441a26896aab6f874ec3a54f857efa64b01230ef095321f4bca21
-PKG_SOURCE_PROTO:=zip
-#PKG_SOURCE_DATE:=2018-11-16
-#PKG_SOURCE_VERSION:=2c9399fa6812c40384299924c39bea0e1a98b1f364c5cb8c7b54fe245ed53c83
-
-
-
-
-#PKG_SOURCE_URL:=https://github.com/greearb/rtl8812AU_8821AU_linux.git
-#PKG_MIRROR_HASH:=42b32c56cf31bdf3c9cd4e304c9aac761b623c8737d8c57518117acdc5a84cfe
-#PKG_SOURCE_PROTO:=git
-#PKG_SOURCE_DATE:=2018-11-16
-#PKG_SOURCE_VERSION:=661268fd174d4a74834c82d7d3987b0a560e6c57
-
-#PKG_MAINTAINER:=Ben Greear <greearb@candelatech.com>
+PKG_MAINTAINER:=Ben Greear <greearb@candelatech.com>
 PKG_BUILD_PARALLEL:=1
 #PKG_EXTMOD_SUBDIRS:=rtl8812au-ct
 
@@ -35,7 +24,7 @@ include $(INCLUDE_DIR)/package.mk
 
 define KernelPackage/rtl8812au-ct
   SUBMENU:=Wireless Drivers
-  TITLE:=Driver for Realtek 8812 AU devices comfast 912-ac, etc
+  TITLE:=Driver for Realtek 8812/21 AU devices
   DEPENDS:=+kmod-cfg80211 +kmod-usb-core +@DRIVER_11N_SUPPORT +@DRIVER_11AC_SUPPORT @!LINUX_3_18 @!LINUX_4_9
   FILES:=\
 	$(PKG_BUILD_DIR)/rtl8812au.ko
