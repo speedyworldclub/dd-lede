@@ -1,1 +1,1 @@
-# d2-lede
+# Merge of DTS from Lede DTS from Nanopi
